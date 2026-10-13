@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ventor Me — разберись с поступлением и профориентацией с AI</title>
+<meta name="description" content="Ventor Me: AI-ассистент, профориентация, подбор учебных заведений, помощь с эссе и портфолио в одном месте.">
+<meta property="og:title" content="Ventor Me — твоё будущее начинается не с догадок">
+<meta property="og:description" content="Инструменты Ventor Me и AI помогают разобраться в образовательных возможностях.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b0a1f">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Unbounded:wght@500;600&display=swap">
+<style>
+:root{--ink:#0b0a1f;--ink2:#17143a;--pur:#6a3df0;--pur2:#8b66ff;--lime:#c6f432;--white:#fff;--lbg:#f4f2ff;--lcard:#fff;--ltext:#171533;--lmute:#5d5b78;--lline:#e2defa;--dmute:#b4b1d6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--lbg:#12102c;--lcard:#1b1840;--ltext:#f0eeff;--lmute:#aaa7cf;--lline:#2c285c}}
+:root[data-theme="dark"]{--lbg:#12102c;--lcard:#1b1840;--ltext:#f0eeff;--lmute:#aaa7cf;--lline:#2c285c}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--ink);color:var(--white);font:17px/1.6 Onest,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Unbounded,Onest,system-ui,sans-serif;font-weight:600;line-height:1.15;margin:0;overflow-wrap:anywhere}
+.w{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:88px 0;position:relative}
+h2{font-size:clamp(1.55rem,4vw,2.3rem);margin-bottom:14px}
+.lead{max-width:600px;color:var(--lmute);margin:0 0 40px}
+.dark{background:var(--ink);color:#fff}.dark .lead{color:var(--dmute)}
+.light{background:var(--lbg);color:var(--ltext)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 28px;border-radius:14px;background:var(--lime);color:#14120a;font-weight:700;text-decoration:none;border:2px solid var(--lime);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(198,244,50,.35)}
+.btn.sec{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn.sec:hover{border-color:#fff;box-shadow:none}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+header{position:absolute;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:5}
+header .w{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{font:600 1.15rem Unbounded,sans-serif;color:#fff;text-decoration:none}.logo b{color:var(--lime);font-weight:600}
+header .btn{min-height:44px;padding:0 18px;font-size:.9rem}
+/* hero */
+.hero{padding:130px 0 90px;background:radial-gradient(60% 55% at 85% 20%,rgba(106,61,240,.55),transparent 70%),radial-gradient(40% 40% at 5% 90%,rgba(198,244,50,.12),transparent 70%),var(--ink);overflow:hidden}
+.hero .w{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2rem,5.4vw,3.5rem);margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p{color:var(--dmute);font-size:1.12rem;max-width:520px;margin:0 0 30px}
+.note{font-size:.85rem;color:var(--dmute);margin-top:14px}
+.stage{position:relative;height:430px}
+.fc{position:absolute;width:62%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(10px);border-radius:18px;padding:14px;font-size:.85rem;box-shadow:0 20px 50px rgba(0,0,0,.35);animation:fl 7s ease-in-out infinite}
+.fc h4{margin:0 0 8px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--lime);font-weight:700}
+.fc.a{top:0;left:0}.fc.b{top:92px;right:0;animation-delay:-2s}.fc.c{top:225px;left:4%;animation-delay:-4s}.fc.d{top:318px;right:2%;width:56%;animation-delay:-1s}
+.bub{background:rgba(255,255,255,.1);border-radius:10px;padding:7px 10px;margin-bottom:6px}.bub.ai{background:rgba(139,102,255,.45)}
+.sk{height:8px;border-radius:4px;background:rgba(255,255,255,.18);margin:7px 0}
+.tg{display:inline-block;padding:3px 9px;border-radius:99px;background:rgba(198,244,50,.16);color:var(--lime);font-size:.72rem;margin:2px 3px 0 0}
+.cap{font-size:.72rem;color:var(--dmute);margin-top:10px}
+@keyframes fl{50%{transform:translateY(-10px)}}
+/* cards */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--lcard);border:1px solid var(--lline);border-radius:20px;padding:26px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(106,61,240,.18);border-color:var(--pur2)}
+.card h3{font-size:1.05rem;margin:14px 0 10px}.card p{margin:0;color:var(--lmute);font-size:.97rem}
+.ic{width:48px;height:48px;border-radius:14px;background:var(--pur);display:grid;place-items:center;box-shadow:4px 4px 0 var(--lime)}
+.ic svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ex{display:block;margin-top:16px;padding-top:14px;border-top:1px dashed var(--lline);font-size:.86rem;color:var(--pur);font-weight:500}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ex{color:var(--pur2)}}
+.pr{display:flex;gap:14px;align-items:flex-start}.pr i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--pur);color:#fff;display:grid;place-items:center;font:600 .9rem Unbounded,sans-serif;font-style:normal}
+.pr p{margin:0;color:var(--ltext);font-weight:500}
+.bridge{margin-top:36px;padding:26px 30px;border-radius:20px;background:linear-gradient(120deg,var(--pur),#4a22c4);color:#fff;font:500 clamp(1.05rem,2.5vw,1.35rem)/1.4 Unbounded,sans-serif}
+.bridge em{font-style:normal;color:var(--lime)}
+.cta-row{margin-top:40px;text-align:center}
+/* roadmap */
+.road{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative;counter-reset:s}
+.road::before{content:"";position:absolute;top:27px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,var(--pur2),var(--lime))}
+.st{position:relative;background:var(--ink2);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:26px 20px 22px;margin-top:0}
+.st b{position:relative;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--lime);color:#14120a;font:600 1.1rem Unbounded,sans-serif;margin:-50px 0 14px;border:5px solid var(--ink)}
+.st p{margin:0;color:#fff;font-weight:500}
+.road{padding-top:26px}
+/* ai */
+.ai{background:linear-gradient(135deg,#2a1180,#0b0a1f 70%)}
+.ai .w{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.ai ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.ai li{padding:16px 18px 16px 52px;position:relative;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px}
+.ai li::before{content:"✓";position:absolute;left:16px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--lime);color:#14120a;display:grid;place-items:center;font-weight:700;font-size:.85rem}
+.ai .lead{margin-bottom:16px}
+/* faq */
+details{background:var(--lcard);border:1px solid var(--lline);border-radius:16px;margin-bottom:12px;overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:20px 56px 20px 22px;font-weight:700;position:relative;min-height:56px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:var(--pur);color:#fff;display:grid;place-items:center;transition:transform .2s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{margin:0;padding:0 22px 20px;color:var(--lmute)}
+/* final */
+.fin{text-align:center;background:radial-gradient(50% 70% at 50% 100%,rgba(106,61,240,.6),transparent 70%),var(--ink)}
+.fin h2{font-size:clamp(1.7rem,4.6vw,2.9rem);max-width:760px;margin:0 auto 16px}
+.fin p{color:var(--dmute);max-width:520px;margin:0 auto 30px}
+footer{background:var(--ink);color:var(--dmute);text-align:center;font-size:.85rem;padding:24px 20px;border-top:1px solid rgba(255,255,255,.1)}
+/* reveal */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
+@media(max-width:900px){.hero .w,.ai .w{grid-template-columns:1fr}.road{grid-template-columns:1fr 1fr;row-gap:44px}.road::before{display:none}}
+@media(max-width:640px){section{padding:60px 0}.hero{padding-top:110px}.btn{width:100%}header .btn{width:auto}.road{grid-template-columns:1fr}.stage{height:auto;display:grid;gap:12px}.fc{position:static;width:100%!important;animation:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="w"><a class="logo" href="#top">Ventor<b>Me</b></a><a class="btn" data-cta="header" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-170">Открыть</a></div></header>
+<main id="top">
+<section class="hero" aria-labelledby="h1"><div class="w">
+<div>
+<h1 id="h1">Твоё будущее начинается <em>не с догадок</em></h1>
+<p>Разберись в своих возможностях, найди подходящие образовательные направления и подготовься к следующему шагу с помощью инструментов Ventor Me и AI.</p>
+<div class="row"><a class="btn" data-cta="hero" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-170">Открыть Ventor Me →</a><a class="btn sec" href="#features">Изучить возможности</a></div>
+<div class="note">Регистрация проходит на сайте Ventor Me</div>
+</div>
+<div class="stage" aria-hidden="true">
+<div class="fc a"><h4>AI-ассистент</h4><div class="bub">С чего начать подготовку?</div><div class="bub ai">Определим интересы и составим шаги.</div></div>
+<div class="fc b"><h4>Профориентация</h4><span class="tg">интересы</span><span class="tg">сильные стороны</span><span class="tg">направления</span><div class="sk" style="width:80%"></div><div class="sk" style="width:55%"></div></div>
+<div class="fc c"><h4>Учебные заведения</h4><div class="sk" style="width:90%"></div><div class="sk" style="width:70%"></div><div class="sk" style="width:80%"></div><span class="tg">сравнить</span></div>
+<div class="fc d"><h4>Эссе и портфолио</h4><div class="sk" style="width:85%"></div><div class="sk" style="width:60%"></div><div class="cap">Иллюстрация интерфейса</div></div>
+</div></div></section>
+
+<section class="light" aria-labelledby="hp"><div class="w">
+<h2 id="hp" class="rv">Знакомо? Поступление легко превращается в лабиринт</h2>
+<p class="lead rv">Эти ситуации знакомы многим, и это нормально.</p>
+<div class="grid">
+<div class="card rv pr"><i>1</i><p>Не знаешь, с чего начать поступление.</p></div>
+<div class="card rv pr"><i>2</i><p>Информации слишком много, и трудно понять, чему доверять.</p></div>
+<div class="card rv pr"><i>3</i><p>Сложно выбрать направление обучения.</p></div>
+<div class="card rv pr"><i>4</i><p>Непонятно, как работать над эссе и портфолио.</p></div>
+<div class="card rv pr"><i>5</i><p>Трудно самостоятельно составить последовательный план действий.</p></div>
+</div>
+<div class="bridge rv">Ventor Me помогает сделать этот путь <em>понятнее и организованнее</em>.</div>
+</div></section>
+
+<section class="light" id="features" style="padding-top:0" aria-labelledby="hf"><div class="w">
+<h2 id="hf" class="rv">Что есть в Ventor Me</h2>
+<p class="lead rv">Инструменты, которые помогают двигаться шаг за шагом.</p>
+<div class="grid">
+<article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.5 7.2L4 20l1-4.5A8 8 0 1121 12z"/></svg></div><h3>AI-ассистент</h3><p>Помогает искать информацию и планировать следующие шаги. Можно задавать вопросы своими словами и получать подсказки, с чего двигаться дальше.</p><span class="ex">Например: «Какие шаги мне сделать этой осенью?»</span></article>
+<article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></div><h3>Профориентация</h3><p>Помогает исследовать интересы и образовательные направления. Тесты дают отправную точку для размышлений о том, что тебе близко.</p><span class="ex">Например: пройти тест и сравнить направления</span></article>
+<article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 10l9-5 9 5-9 5zM7 12.5V17c3 2.4 7 2.4 10 0v-4.5"/></svg></div><h3>Подбор учебных заведений</h3><p>Помогает изучать подходящие варианты обучения. Так проще понять, какие места стоит рассмотреть подробнее.</p><span class="ex">Например: составить свой список вариантов</span></article>
+<article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16zM13 7l4 4"/></svg></div><h3>Эссе</h3><p>Поддерживает в работе над структурой и содержанием. Помогает собрать мысли в связный текст, а не оставляет с чистым листом.</p><span class="ex">Например: продумать план эссе перед написанием</span></article>
+<article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2M3 13h18"/></svg></div><h3>Портфолио</h3><p>Помогает организовать достижения и материалы. Удобнее увидеть, что у тебя уже есть и чего может не хватать.</p><span class="ex">Например: разложить достижения по категориям</span></article>
+<article class="card rv"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 11h16M8 15l2 2 4-4"/></svg></div><h3>Планирование поступления</h3><p>Помогает систематизировать дальнейшие действия и собрать их в понятную последовательность. Доступность отдельных функций уточняйте на платформе.</p><span class="ex">Например: собрать список дел по порядку</span></article>
+</div>
+<div class="cta-row rv"><a class="btn" data-cta="features" style="background:var(--pur);border-color:var(--pur);color:#fff" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-170">Открыть Ventor Me →</a></div>
+</div></section>
+
+<section class="dark" aria-labelledby="hr"><div class="w">
+<h2 id="hr" class="rv">Как это работает</h2>
+<p class="lead rv">Простой маршрут от вопросов к плану.</p>
+<div class="road">
+<div class="st rv"><b>1</b><p>Изучи свои интересы и цели.</p></div>
+<div class="st rv"><b>2</b><p>Ознакомься с подходящими направлениями и возможностями.</p></div>
+<div class="st rv"><b>3</b><p>Используй доступные инструменты Ventor Me.</p></div>
+<div class="st rv"><b>4</b><p>Определи следующие шаги для своего образовательного пути.</p></div>
+</div></div></section>
+
+<section class="light" aria-labelledby="hw"><div class="w">
+<h2 id="hw" class="rv">Кому будет полезен Ventor Me</h2>
+<p class="lead rv">Тем, кто хочет разобраться в образовательных возможностях.</p>
+<div class="grid">
+<div class="card rv"><h3>Школьникам</h3><p>Если пока не ясно, куда двигаться и как готовиться к поступлению.</p></div>
+<div class="card rv"><h3>Студентам</h3><p>Если нужно переосмыслить направление или найти следующий образовательный шаг.</p></div>
+<div class="card rv"><h3>Тем, кто выбирает</h3><p>Если трудно сравнить направления и учебные заведения.</p></div>
+<div class="card rv"><h3>Готовящим материалы</h3><p>Если нужна опора для эссе, портфолио и плана действий.</p></div>
+</div></div></section>
+
+<section class="ai" aria-labelledby="ha"><div class="w">
+<div><h2 id="ha" class="rv">AI, который помогает разобраться, а не добавляет шума</h2>
+<p class="lead rv" style="color:var(--dmute)">AI в Ventor Me — помощник в размышлениях и планировании. Решение остаётся за тобой, а важную информацию стоит проверять в официальных источниках.</p></div>
+<ul>
+<li class="rv">Помогает быстрее ориентироваться в большом объёме информации</li>
+<li class="rv">Отвечает на вопросы, заданные обычными словами</li>
+<li class="rv">Подсказывает, как разбить цель на понятные шаги</li>
+</ul></div></section>
+
+<section class="light" aria-labelledby="hq"><div class="w" style="max-width:820px">
+<h2 id="hq" class="rv">Частые вопросы</h2>
+<p class="lead rv">Коротко о главном.</p>
+<details class="rv" open><summary>Что такое Ventor Me?</summary><p>Образовательная платформа, которая помогает с профориентацией и подготовкой к поступлению: AI-ассистент, профориентационные тесты, подбор учебных заведений, помощь с эссе и анализ портфолио.</p></details>
+<details class="rv"><summary>Как AI-ассистент помогает?</summary><p>Помогает искать информацию и планировать следующие шаги. Это помощник для размышлений, а не замена твоему решению.</p></details>
+<details class="rv"><summary>Как подобрать учебное заведение?</summary><p>Платформа помогает изучать подходящие варианты обучения. Окончательный выбор лучше делать, сверяясь с официальной информацией вузов и колледжей.</p></details>
+<details class="rv"><summary>Поможет ли Ventor Me с эссе и портфолио?</summary><p>Да, платформа поддерживает работу над эссе и помогает организовать портфолио. Конкретный результат поступления она не гарантирует.</p></details>
+<details class="rv"><summary>С чего начать?</summary><p>Перейди на Ventor Me, зарегистрируйся и изучи возможности платформы. Затем выбери инструменты под свою цель.</p></details>
+</div></section>
+
+<section class="fin" aria-labelledby="hfin"><div class="w">
+<h2 id="hfin" class="rv">Сделай первый шаг к более понятному плану</h2>
+<p class="rv">Начать можно с изучения собственных образовательных возможностей.</p>
+<div class="rv"><a class="btn" data-cta="final" href="https://ventorme.ai/register?utm_source=hacknext&utm_campaign=team-170">Открыть Ventor Me →</a></div>
+</div></section>
+</main>
+<footer>Ventor Me · Страница создана командой хакатона</footer>
+<script>
+(function(){
+  document.documentElement.classList.add("js");
+  var GA_ID=""; // вставьте ID вида G-XXXXXXXXXX (работает на вашем хостинге, не на странице Claude)
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=function(){window.dataLayer.push(arguments);};
+  var utm={};
+  try{var p=new URLSearchParams(location.search);
+    ["utm_source","utm_medium","utm_campaign","utm_term","utm_content"].forEach(function(k){if(p.get(k))utm[k]=p.get(k);});
+    if(Object.keys(utm).length)sessionStorage.setItem("vm_utm",JSON.stringify(utm));
+    else utm=JSON.parse(sessionStorage.getItem("vm_utm")||"{}");}catch(e){}
+  function track(n,d){try{gtag("event",n,d);}catch(e){}}
+  try{
+    if(GA_ID){var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(GA_ID);document.head.appendChild(s);gtag("js",new Date());gtag("config",GA_ID,{campaign_source:utm.utm_source,campaign_name:utm.utm_campaign});}
+    else track("page_view",{page_location:location.href,page_title:document.title});
+  }catch(e){}
+  var last={id:"",t:0};
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("a[data-cta]");if(!a)return;
+    var id=a.getAttribute("data-cta"),n=Date.now();
+    if(last.id===id&&n-last.t<1000)return;last={id:id,t:n};
+    var d={cta_id:id,link_url:a.href};for(var k in utm)d[k]=utm[k];
+    track("register_cta_click",d);
+  });
+  var els=document.querySelectorAll(".rv");
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target);}});},{threshold:.12});
+    els.forEach(function(el){io.observe(el);});
+  }else els.forEach(function(el){el.classList.add("in");});
+})();
+</script>
+</body>
+</html>
